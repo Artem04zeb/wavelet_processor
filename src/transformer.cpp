@@ -33,7 +33,6 @@ void HaarTransformer::upload_image(std::string path_to_image) {
     if (local_image.empty()) {
         std::cerr << "Error: failed to load image!" << std::endl;
     }
-    std::cout << "upload_image отработал" << std::endl;
 
 }
 

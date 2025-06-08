@@ -1,5 +1,6 @@
 ﻿// haar_transform.h
 
+
 #pragma once
 
 #ifndef HAAR_TRANSFORM_H
