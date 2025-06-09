@@ -36,14 +36,6 @@ public:
 
 
     /**
-     * @brief Выполняет обратное преобразование Хаара и восстанавливает изображение.
-     * @param NIter Количество уровней (итераций), соответствующее прямому преобразованию.
-     * @return Восстановленное изображение (cv::Mat).
-     */
-    cv::Mat backward_transform(int NIter);
-
-
-    /**
      * @brief Разделяет изображение на цветовые каналы и применяет преобразование Хаара к каждому из них.
      */
     void procces_channels();
@@ -92,6 +84,14 @@ public:
 
 
     /**
+     * @brief Выполняет обратное преобразование Хаара и восстанавливает изображение.
+     * @param NIter Количество уровней (итераций), соответствующее прямому преобразованию.
+     * @return Восстановленное изображение (cv::Mat).
+     */
+    cv::Mat backward_transform(int NIter, Shrinktype shrinktype, float SHRINKAGE_T);
+
+
+    /**
      * @brief Выполняет обратное преобразование Хаара для одного канала.
      * @param channel Исходный канал с коэффициентами Хаара.
      * @param out_channel Выходной канал (восстановленный).
@@ -99,7 +99,7 @@ public:
      * @param SHRINKAGE_TYPE Тип пороговой фильтрации.
      * @param SHRINKAGE_T Пороговое значение для фильтрации.
      */
-    void apply_inv_Haar(cv::Mat& channel, cv::Mat& out_channel, int NIter, Shrinktype SHRINKAGE_TYPE, float SHRINKAGE_T);
+    void apply_inv_Haar(cv::Mat& channel, cv::Mat& out_channel, int NIter, Shrinktype SHRINKTYPE, float SHRINKAGE_T);
     
 
 private:

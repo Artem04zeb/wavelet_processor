@@ -62,10 +62,10 @@ void HaarTransformer::forward_transform(int NIter) {
 }
 
 
-cv::Mat HaarTransformer::backward_transform(int NIter) {
+cv::Mat HaarTransformer::backward_transform(int NIter, Shrinktype shrinktype = Shrinktype::NONE, float shrinkage = 50) {
     
     for (int i = 0; i < 3; ++i) {
-        apply_inv_Haar(haar_channels[i], splitted_channels[i], NIter, HaarTransformer::Shrinktype::NONE, 50);
+        apply_inv_Haar(haar_channels[i], splitted_channels[i], NIter, shrinktype, shrinkage);
     }
 
     for (auto& c : splitted_channels) {
