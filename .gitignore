@@ -9,5 +9,6 @@ out/
 bin.dbg/
 temp/
 kodak/
+data/processed/*.png
 
 # Игнорирование конкретных файлов
